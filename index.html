@@ -3,75 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>航图中心 | CHINA NORTHERN</title>
+    <title>CHINA NORTHERN | 虚拟中国北方航空</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Noto+Sans+SC:wght@400;700&display=swap');
         :root { --northern-skyblue: #87CEEB; --northern-navy: #0047ab; }
-        body { background-color: #f4f4f4; font-family: 'Noto Sans SC', sans-serif; }
-        .retro-border { border: 2px solid var(--northern-navy); }
+        body { background-color: #f4f4f4; font-family: 'Noto Sans SC', sans-serif; color: #333; }
+        .retro-border { border: 2px solid var(--northern-navy); box-shadow: 4px 4px 0px var(--northern-skyblue); }
+        .header-stripe { background: repeating-linear-gradient(45deg, #87CEEB, #87CEEB 10px, #7ac5e6 10px, #7ac5e6 20px); }
         .font-oswald { font-family: 'Oswald', sans-serif; }
+        .ticket-cut { clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%); }
     </style>
 </head>
-<body class="bg-gray-100">
-    <div class="bg-blue-900 text-white py-4 px-6 mb-8 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <a href="index.html" class="hover:text-sky-300"><i class="fas fa-arrow-left"></i> 返回首页</a>
-            <span class="opacity-30">|</span>
-            <span class="font-bold tracking-widest font-oswald uppercase">Chart Library / 航图中心</span>
-        </div>
-        <div class="font-oswald text-xl tracking-tighter">CBF / CHINA NORTHERN</div>
-    </div>
+<body class="bg-gray-100 min-h-screen">
+    <div class="header-stripe h-4 w-full"></div>
 
-    <div class="max-w-4xl mx-auto px-4 py-6">
-        <div class="bg-white retro-border p-8 mb-8">
-            <h2 class="text-2xl font-bold text-blue-900 mb-6 border-b-2 border-sky-500 pb-2">核心枢纽航图包</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- 沈阳桃仙 -->
-                <div class="border p-4 hover:bg-sky-50 transition flex justify-between items-center">
-                    <div>
-                        <div class="text-2xl font-oswald font-bold text-blue-900">ZYTX</div>
-                        <div class="text-sm text-gray-500">沈阳桃仙国际机场</div>
-                    </div>
-                    <a href="#" class="bg-sky-500 text-white px-4 py-2 rounded text-sm font-bold">下载 PDF</a>
-                </div>
-                <!-- 大连周水子 -->
-                <div class="border p-4 hover:bg-sky-50 transition flex justify-between items-center">
-                    <div>
-                        <div class="text-2xl font-oswald font-bold text-blue-900">ZYTL</div>
-                        <div class="text-sm text-gray-400">大连周水子国际机场</div>
-                    </div>
-                    <a href="#" class="bg-sky-500 text-white px-4 py-2 rounded text-sm font-bold">下载 PDF</a>
-                </div>
-                <!-- 哈尔滨太平 -->
-                <div class="border p-4 hover:bg-sky-50 transition flex justify-between items-center">
-                    <div>
-                        <div class="text-2xl font-oswald font-bold text-blue-900">ZYHB</div>
-                        <div class="text-sm text-gray-400">哈尔滨太平国际机场</div>
-                    </div>
-                    <a href="#" class="bg-sky-500 text-white px-4 py-2 rounded text-sm font-bold">下载 PDF</a>
-                </div>
-                <!-- 三亚凤凰 -->
-                <div class="border p-4 hover:bg-sky-50 transition flex justify-between items-center">
-                    <div>
-                        <div class="text-2xl font-oswald font-bold text-blue-900">ZJSY</div>
-                        <div class="text-sm text-gray-400">三亚凤凰国际机场</div>
-                    </div>
-                    <a href="#" class="bg-sky-500 text-white px-4 py-2 rounded text-sm font-bold">下载 PDF</a>
+    <div class="max-w-5xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row items-center justify-between border-b-4 border-blue-900 pb-6 mb-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-black text-blue-900 tracking-tighter mb-1">
+                    <span class="text-sky-500">CHINA</span> NORTHERN
+                </h1>
+                <p class="text-xl font-bold tracking-[0.3em] text-gray-600">中国北方航空 <span class="text-sm font-normal tracking-normal text-gray-400">虚拟分部</span></p>
+            </div>
+            <div class="mt-4 md:mt-0 flex gap-4 items-center">
+                <nav class="hidden md:flex gap-6 text-sm font-bold text-blue-900 uppercase tracking-widest mr-6">
+                    <a href="index.html" class="border-b-2 border-blue-900">首页</a>
+                    <a href="charts.html" class="hover:text-sky-500 transition">航图下载</a>
+                </nav>
+                <div class="text-right">
+                    <div class="inline-block bg-blue-900 text-white px-6 py-2 text-2xl font-oswald tracking-widest">CBF</div>
                 </div>
             </div>
         </div>
 
-        <div class="bg-sky-100 p-6 border-l-8 border-sky-500">
-            <h3 class="font-bold text-sky-800 mb-2">💡 飞行提示</h3>
-            <p class="text-sm text-sky-700 leading-relaxed">
-                作为 CBF 机组成员，请确保在连线前已查阅最新的航图资料包。如果 PDF 链接失效，请前往 QQ 群 (1093969411) 群文件获取最新修订版。
-            </p>
+        <!-- Main Banner -->
+        <div class="bg-white retro-border ticket-cut overflow-hidden mb-10">
+            <div class="bg-sky-500 p-3 text-white flex justify-between items-center text-sm font-bold tracking-widest">
+                <span><i class="fas fa-plane-departure mr-2"></i> MAIN OPERATIONS</span>
+                <span class="font-mono">CALLSIGN: CHINA NORTHERN</span>
+            </div>
+            <div class="p-8 grid md:grid-cols-3 gap-8">
+                <div class="col-span-2 space-y-4">
+                    <h2 class="text-3xl font-bold text-gray-800 italic">“翼展黑土，情系北方”</h2>
+                    <p class="text-gray-600 leading-relaxed">传承 90 年代民航精神，我们在 VATSIM 网络重现天鹅标志。专注于东北扇区 ZYTX / ZYTL 运行，提供最真实的模拟飞行环境。</p>
+                    <div class="flex gap-4 pt-4">
+                        <a href="charts.html" class="border-2 border-blue-900 px-6 py-2 font-bold text-blue-900 hover:bg-blue-900 hover:text-white transition">
+                            <i class="fas fa-map mr-2"></i> 获取航图包
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 flex flex-col justify-center border-l-2 border-dashed border-gray-300 text-center">
+                    <p class="text-xs font-bold text-gray-400 mb-4 tracking-widest">JOIN THE CREW</p>
+                    <a href="https://qm.qq.com/cgi-bin/qm/qr?k=你的链接&jump_from=webapi&group_code=1093969411" 
+                       class="bg-blue-900 hover:bg-sky-600 text-white py-3 rounded font-bold text-lg transition-all flex items-center justify-center gap-2">
+                       <i class="fab fa-qq"></i> 加入QQ群
+                    </a>
+                    <p class="mt-2 text-[10px] text-gray-400 font-mono italic underline">ID: 1093969411</p>
+                </div>
+            </div>
         </div>
 
-        <footer class="mt-20 text-center text-gray-400 text-[10px] uppercase">
-            Charts provided for Flight Simulation only. Not for real world navigation.
+        <!-- Info Grid -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 border-2 border-gray-200">
+                <h3 class="text-lg font-bold mb-4 border-b-2 border-sky-500 pb-2 text-blue-900"><i class="fas fa-info-circle mr-2"></i> 运行要求</h3>
+                <ul class="text-sm space-y-2 text-gray-600">
+                    <li>• 遵守 VATSIM 网络守则 (CoC)</li>
+                    <li>• 熟练掌握连线飞行基础操作</li>
+                    <li>• 优先使用 CBF 呼号及北方航涂装</li>
+                </ul>
+            </div>
+            <div class="bg-white p-6 border-2 border-gray-200 text-center flex flex-col justify-center">
+                <p class="text-sm text-gray-500 mb-2 italic">没有找到涂装？</p>
+                <p class="text-blue-900 font-bold">请在加群后，于群文件中下载全机型涂装包</p>
+            </div>
+        </div>
+
+        <footer class="text-center py-8 border-t border-gray-200 text-[10px] text-gray-400 uppercase tracking-[0.2em]">
+            Virtual China Northern Airlines (CBF) | For Flight Simulation Only
         </footer>
     </div>
 </body>
