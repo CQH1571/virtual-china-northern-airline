@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHINA NORTHERN | 虚拟中国北方航空</title>
+    <title>CHINA NORTHERN | 虚拟中国北方航空 - VATSIM</title>
+    <!-- 网站图标引用 -->
+    <link rel="icon" type="image/png" href="logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -15,7 +17,7 @@
         }
 
         body { 
-            background-color: #f8fafc; 
+            background-color: #f1f5f9; 
             font-family: 'Noto Sans SC', sans-serif; 
             color: #1a1a1a; 
         }
@@ -23,11 +25,11 @@
         /* 复古硬核边框 */
         .retro-border { 
             border: 3px solid var(--northern-navy); 
-            box-shadow: 8px 8px 0px var(--northern-skyblue); 
+            box-shadow: 10px 10px 0px var(--northern-skyblue); 
         }
 
         .header-stripe { 
-            background: repeating-linear-gradient(45deg, #87CEEB, #87CEEB 12px, #7ac5e6 12px, #7ac5e6 24px); 
+            background: repeating-linear-gradient(45deg, #87CEEB, #87CEEB 12px, #7ac5e6 12px, #2563eb 24px); 
         }
 
         .font-oswald { font-family: 'Oswald', sans-serif; }
@@ -42,93 +44,143 @@
             letter-spacing: 0.1em;
             font-weight: bold;
         }
+
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(135, 206, 235, 0.4));
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center py-12 px-4">
 
-    <!-- 顶部装饰 -->
-    <div class="fixed top-0 left-0 w-full header-stripe h-2"></div>
+    <!-- 顶部装饰条 -->
+    <div class="fixed top-0 left-0 w-full header-stripe h-3 z-50"></div>
 
-    <div class="max-w-4xl w-full">
+    <div class="max-w-5xl w-full">
         
         <!-- HEADER: 航司视觉核心 -->
-        <header class="flex flex-col md:flex-row items-center justify-between border-b-8 border-blue-900 pb-8 mb-12">
-            <div class="text-center md:text-left">
-                <h1 class="text-5xl md:text-8xl font-black text-blue-900 tracking-tighter leading-none mb-2">
-                    <span class="text-sky-500">CHINA</span> NORTHERN
-                </h1>
-                <div class="flex items-center justify-center md:justify-start gap-3">
-                    <span class="text-2xl font-bold tracking-[0.4em] text-gray-500">中国北方航空</span>
-                    <span class="border-2 border-blue-900 px-2 py-0 text-xs font-bold text-blue-900">CBF</span>
+        <header class="flex flex-col lg:flex-row items-center justify-between border-b-8 border-blue-900 pb-10 mb-12 gap-8">
+            <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                <!-- LOGO 引用位置 -->
+                <div class="relative">
+                    <img src="logo.png" alt="CBF Logo" class="h-20 md:h-28 w-auto logo-glow object-contain">
+                </div>
+                
+                <div class="flex flex-col">
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-blue-900 tracking-tighter leading-none">
+                        <span class="text-sky-500">CHINA</span> NORTHERN
+                    </h1>
+                    <div class="flex items-center justify-center md:justify-start gap-3 mt-2">
+                        <span class="text-2xl font-bold tracking-[0.4em] text-gray-500">中国北方航空</span>
+                        <span class="bg-blue-900 text-white px-2 py-0 text-xs font-bold">VATSIM</span>
+                    </div>
                 </div>
             </div>
-            <div class="mt-8 md:mt-0 flex flex-col items-end">
-                <div class="bg-blue-900 text-white px-8 py-3 text-4xl font-oswald tracking-widest italic">CBF</div>
-                <p class="text-[10px] text-gray-400 font-mono mt-2 tracking-widest uppercase text-right">
-                    Virtual Operations Division<br>Vatsim Network
+
+            <div class="flex flex-col items-center md:items-end">
+                <div class="bg-blue-900 text-white px-8 py-3 text-4xl font-oswald tracking-widest italic">CBF / CBF</div>
+                <p class="text-[10px] text-gray-400 font-mono mt-2 tracking-widest uppercase text-center md:text-right leading-relaxed">
+                    Virtual Operations Division<br>
+                    Flight Simulation Use Only
                 </p>
             </div>
         </header>
 
         <!-- MAIN CARD: 运行信息 -->
         <div class="bg-white retro-border p-8 md:p-12 mb-12 relative overflow-hidden">
-            <!-- 背景修饰文字 -->
-            <div class="absolute -right-4 bottom-0 text-gray-50 text-9xl font-black select-none pointer-events-none">CBF</div>
+            <!-- 背景装饰水印 -->
+            <div class="absolute -right-8 -bottom-8 text-gray-50 text-[12rem] font-black select-none pointer-events-none italic">CBF</div>
 
-            <div class="relative z-10 space-y-8">
+            <div class="relative z-10 space-y-10">
                 <div>
-                    <span class="status-tag italic">Slogan</span>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 italic mt-2">“翼展黑土，情系北方”</h2>
+                    <span class="status-tag italic">Mission Statement</span>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-800 italic mt-4 uppercase tracking-tight">“翼展黑土，情系北方”</h2>
                 </div>
 
-                <div class="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed">
+                <div class="grid md:grid-cols-2 gap-12">
                     <div class="space-y-4">
-                        <p class="font-bold text-blue-900 border-l-4 border-sky-400 pl-4">传承 90 年代经典航司精神</p>
-                        <p class="text-sm">我们在 VATSIM 模拟飞行网络中复现原中国北方航空的职业化运行。作为一家硬核虚拟航司，我们专注于机组身份识别与标准化运行流程。</p>
+                        <div class="flex items-center gap-2 text-blue-900 font-bold">
+                            <i class="fas fa-history"></i>
+                            <span class="uppercase tracking-wider">航司精神传承</span>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed text-sm md:text-base border-l-4 border-sky-400 pl-4">
+                            我们在 <strong>VATSIM</strong> 模拟飞行网络中致力于复现原中国北方航空的职业化运行。
+                            不仅是飞行，更是对 90 年代中国民航黄金时代的致敬。作为硬核虚拟航司，我们强调标准通话（RTF）与标准化操作（SOP）。
+                        </p>
                     </div>
+
                     <div class="space-y-4">
-                        <p class="font-bold text-blue-900 border-l-4 border-sky-400 pl-4">机组运行规范</p>
-                        <ul class="text-sm font-mono space-y-1">
-                            <li>CALLSIGN: CHINA NORTHERN</li>
-                            <li>HUB: ZYTX / ZYTL / ZYHB</li>
-                            <li>FLEET: A321-100, MD-82, Y-5，Y-7</li>
-                        </ul>
+                        <div class="flex items-center gap-2 text-blue-900 font-bold">
+                            <i class="fas fa-plane"></i>
+                            <span class="uppercase tracking-wider">机组运行规范</span>
+                        </div>
+                        <div class="bg-slate-50 p-4 border border-gray-200">
+                            <ul class="text-sm font-mono space-y-2 text-gray-700">
+                                <li class="flex justify-between border-b border-gray-100 pb-1">
+                                    <span class="text-gray-400">CALLSIGN:</span> 
+                                    <span class="font-bold">CHINA NORTHERN</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-1">
+                                    <span class="text-gray-400">IATA / ICAO:</span> 
+                                    <span class="font-bold">CJ / CBF</span>
+                                </li>
+                                <li class="flex justify-between border-b border-gray-100 pb-1">
+                                    <span class="text-gray-400">BASE HUB:</span> 
+                                    <span class="font-bold uppercase text-sky-600">ZYTX / ZYTL / ZYHB</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span class="text-gray-400">FLEET:</span> 
+                                    <span class="font-bold uppercase">A321 / MD-82 / Y-7 / Y-5</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
                 <!-- ACTION: 加入按钮 -->
-                <div class="pt-6 border-t-2 border-dashed border-gray-200 flex flex-col md:flex-row items-center gap-8">
+                <div class="pt-8 border-t-2 border-dashed border-gray-200 flex flex-col md:flex-row items-center gap-8">
                     <a href="https://qm.qq.com/q/Z9fy8sFfMI" 
-                       class="inline-block bg-blue-900 hover:bg-sky-500 text-white font-bold px-12 py-5 rounded shadow-xl transition-all text-2xl flex items-center gap-4">
-                       <i class="fab fa-qq"></i> 加入飞行机组
+                       class="group relative inline-block bg-blue-900 hover:bg-sky-500 text-white font-bold px-12 py-6 rounded shadow-[0_10px_20px_rgba(0,71,171,0.3)] transition-all text-2xl flex items-center gap-4 overflow-hidden">
+                       <i class="fab fa-qq group-hover:rotate-12 transition-transform"></i> 
+                       <span>加入飞行机组</span>
+                       <!-- 按钮内的 Logo 微缩装饰 -->
+                       <img src="logo.png" class="absolute right-[-10px] top-[-10px] h-16 opacity-10 group-hover:scale-110 transition-transform" alt="">
                     </a>
                     <div class="text-center md:text-left">
-                        <p class="text-xs text-gray-400 uppercase tracking-widest font-bold">Official QQ Group</p>
-                        <p class="text-xl font-oswald text-blue-900">1093969411</p>
+                        <p class="text-xs text-gray-400 uppercase tracking-[0.2em] font-bold">Official Recruitment Group</p>
+                        <p class="text-3xl font-oswald text-blue-900">1093969411</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- FOOTER: 资源与免责 -->
-        <div class="grid md:grid-cols-3 gap-6 mb-20">
-            <div class="bg-gray-100 p-6">
-                <h4 class="font-bold text-blue-900 text-sm mb-2 uppercase tracking-widest italic">机队涂装</h4>
-                <p class="text-xs text-gray-500">机组专属精美复刻涂装，请于入会后在群文件内获取下载链接。</p>
+        <!-- FOOTER: 资源区 -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+            <div class="bg-white p-6 border-b-4 border-sky-400 shadow-sm">
+                <h4 class="font-bold text-blue-900 text-sm mb-2 uppercase tracking-widest italic flex items-center gap-2">
+                    <i class="fas fa-paint-brush"></i> 专属涂装
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed">提供针对主流插件机型（Fenix A320/321, Leonardo MD-82）的高度复刻涂装。</p>
             </div>
-            <div class="bg-gray-100 p-6">
-                <h4 class="font-bold text-blue-900 text-sm mb-2 uppercase tracking-widest italic">运行要求</h4>
-                <p class="text-xs text-gray-500">机组人员需具备自主查阅航图及基础连线飞行能力，遵守 VATSIM 网络规则。</p>
+            <div class="bg-white p-6 border-b-4 border-sky-400 shadow-sm">
+                <h4 class="font-bold text-blue-900 text-sm mb-2 uppercase tracking-widest italic flex items-center gap-2">
+                    <i class="fas fa-book"></i> 运行要求
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed">须具备 VATSIM 基础连线常识，理解并遵守网络规则，维护机组职业形象。</p>
             </div>
-            <div class="bg-blue-900 p-6 text-white">
-                <h4 class="font-bold text-sky-300 text-sm mb-2 uppercase tracking-widest italic">免责声明</h4>
-                <p class="text-[10px] text-blue-200">本组织仅限模拟飞行爱好者交流，与现实航空公司无任何关联。FOR FLIGHT SIMULATION USE ONLY.</p>
+            <div class="bg-blue-900 p-6 text-white shadow-lg">
+                <h4 class="font-bold text-sky-300 text-sm mb-2 uppercase tracking-widest italic flex items-center gap-2">
+                    <i class="fas fa-exclamation-triangle"></i> 免责声明
+                </h4>
+                <p class="text-[10px] text-blue-200 opacity-80">
+                    本组织为非营利性虚拟模拟飞行组织，与现实中原“中国北方航空公司”及其母公司无任何商业或隶属关系。
+                </p>
             </div>
         </div>
 
         <!-- 底部水印 -->
-        <footer class="text-center opacity-20 pb-12">
-            <p class="text-[10px] font-mono tracking-[0.5em] uppercase text-gray-600">Virtual China Northern Airlines • Est. 2024</p>
+        <footer class="text-center pb-12">
+            <img src="logo.png" alt="Footer Logo" class="h-10 mx-auto opacity-20 grayscale mb-4">
+            <p class="text-[10px] font-mono tracking-[0.5em] uppercase text-gray-400">Virtual China Northern Airlines • Established 2024</p>
         </footer>
     </div>
 
